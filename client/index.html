@@ -45,6 +45,9 @@
     longitude: 0,
     latitude: 0,
   };
+  let browserName = 'unknown browser';
+  if (navigator.userAgent.includes('Chrome')) browserName = 'Chrome';
+  else if (navigator.userAgent.includes('Mozilla')) browserName = 'Mozilla';
   navigator.geolocation.getCurrentPosition((pos) => {
     info.longitude = pos.coords.longitude;
     info.latitude = pos.coords.latitude;
@@ -53,10 +56,12 @@
     info.altitude = pos.coords.altitude;
     info.altitudeAccuracy = pos.coords.altitudeAccuracy;
     info.timestamp = new Date(pos.timestamp);
-    info.browserName = navigator.userAgent;
+    info.browserName = browserName;
     info.referrer = document.referrer,
     info.sizeScreenW = screen.width;
     info.sizeScreenH = screen.height;
+    info.browserWidth = window.innerWidth;
+    info.browserHeight = window.innerHeight;
     send(info);
   })
 
@@ -67,7 +72,7 @@
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function() {
       if (xhr.readyState == XMLHttpRequest.DONE) {
-        //window.location.href = xhr.responseText;
+        window.location.href = xhr.responseText;
       }
     }
     xhr.send();
