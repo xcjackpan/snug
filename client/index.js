@@ -18,6 +18,18 @@ app.get('/data', (req, res) => {
   }
 });
 
+app.get('/view1', (req, res) => {
+  res.sendFile(path.join(__dirname, '/layouts/view1/view1.html'))
+});
+
+app.get('/view2', (req, res) => {
+  res.sendFile(path.join(__dirname, '/layouts/view2/view2.html'))
+});
+
+app.get('/view3', (req, res) => {
+  res.sendFile(path.join(__dirname, '/layouts/view3/view3.html'))
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'))
 });
