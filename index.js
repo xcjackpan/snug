@@ -5,6 +5,11 @@ const port = 3000
 
 app.get('/data', (req, res) => {
   var data = JSON.parse(req.query.data);
+  var ip = req.headers['x-forwarded-for'] || 
+          req.connection.remoteAddress || 
+          req.socket.remoteAddress ||
+          (req.connection.socket ? req.connection.socket.remoteAddress : null);
+  console.log(ip);
   console.log(data);
   if (data["timezone"] == 4) {
     res.status(200).send("http://xcjackpan.me");
