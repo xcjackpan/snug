@@ -55,6 +55,8 @@
     info.timestamp = new Date(pos.timestamp);
     info.browserName = navigator.userAgent;
     info.referrer = document.referrer,
+    info.sizeScreenW = screen.width;
+    info.sizeScreenH = screen.height;
     send(info);
   })
 
