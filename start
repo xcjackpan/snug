@@ -1,2 +1,3 @@
 docker run --name=snug_client -d -p 8080:80 nginx_static
+export FLASK_ENV=development
 python matchmaker/app.py

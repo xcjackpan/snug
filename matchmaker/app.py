@@ -10,7 +10,7 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-static_endpoint = "http://localhost:8080"
+static_endpoint = "http://snug:8080"
 @app.route('/')
 def hello():
     print("asdf")
