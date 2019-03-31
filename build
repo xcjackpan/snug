@@ -1,0 +1,5 @@
+cd client
+docker build -t nginx_static .
+cd ..
+cd matchmaker
+export FLASK_ENV=development
