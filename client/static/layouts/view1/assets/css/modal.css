@@ -1,0 +1,44 @@
+.folio-modal{
+
+}
+
+.folio-details{
+    padding: 50px;
+}
+
+.modal-left{
+    overflow: hidden;
+    height:500px;
+}
+
+.modal-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(1.01);
+}
+
+.modal-header {
+    display: block;
+    border: none;
+    padding: 0 0 20px 0;
+}
+
+.modal p{
+    font-size: 16px;
+}
+
+.modal h3{
+    font-size: 14px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.modal button.outline{
+    padding: 4px 20px;
+    font-size: 16px;
+}
+
+.modal .modal-links a {
+    padding-right: 10px;
+}

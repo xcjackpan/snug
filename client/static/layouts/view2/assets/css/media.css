@@ -1,0 +1,68 @@
+@media(max-width: 992px){
+	.block-center-h{
+		width:100%;
+	}
+}
+@media(max-width: 815px){
+	.header-title {
+		left:0;
+	}
+
+	.welcome-title {
+		left:0;
+		top:100px;
+	}
+
+	.header_text {
+		text-align: center;
+		opacity: 1;
+		margin-top: -100px;
+	}
+
+	.title-box {
+		width: 90%;
+		height: 60%;
+	}
+
+}
+
+@media(max-width: 768px){
+	.shadow {
+		bottom: -525px;
+	}
+
+	.mobile-top-spacer{
+		padding-top:60px;
+	}
+
+	.side-bar{
+		display:none;
+	}
+	.side-container {
+		padding-left: 20%;
+		padding-right:20%;
+		margin-left: 0px; 
+	}
+	.col-mobile-spacer{
+		padding: 40px;
+	}
+
+	#icons_row div{
+	  width:33%;
+	}
+
+	.deer_background{
+  background-image: url("../img/joey-pilgrim-small.jpg");
+}
+
+}
+
+@media(max-width: 398px){
+	textarea.large {
+  	  min-width: 100%;
+	}
+	.input_line{
+    	width: 90%;
+	}
+
+}

@@ -1,0 +1,54 @@
+.form-fields{
+    padding-left: 50px;
+    margin-top: -20px;
+}
+
+.submit{
+	padding-left:0;
+  padding-bottom:30px;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.display-none{
+	display: none;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.input_line {
+  border-style:none;
+  border-bottom:2px solid #E75B8E;
+  width:250px;
+  height:30px;
+  font-family: "Arial";
+  font-size:16px;
+  font-style: italic;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+textarea.large{
+height:auto;
+min-height: 100px;
+min-width: 300px;
+}
+
+.input_area_line{
+	border-style:none;
+	border-left: 2px solid #E75B8E;
+	margin-left: -12px;
+    padding-left: 20px;
+	font-family: "Arial";
+	font-size:16px;
+	font-style: italic;
+	margin-bottom: 20px;
+}
