@@ -1,0 +1,114 @@
+#latest.folio-item::before {
+	content: "Latest Project!";
+	position: absolute;
+	z-index: 10;
+	transform: rotate(-20deg) translate(-10px,0);
+	padding: 10px;
+	border: solid 1px #98948d;
+	border-radius: 10px;
+	color: #98948d;
+	text-transform: uppercase;
+	left: -20px;
+	transition: 0.5s ease;
+}
+#latest.folio-item:hover::before {
+	opacity: 0;
+	transition: 0.5s ease;
+}
+#latest.folio-item a.project-skills h3::after {
+	content: "FEATURED";
+	background-color: #cbcbcb;
+	color: white;
+	border-radius: 5px;
+	padding: 2px 4px;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+.folio{
+	margin:20px 0 20px 0;
+}
+
+.folio-item{
+	margin: 0 0 60px 0;
+	padding: 0;
+}
+
+.folio-item .folio-img-wrap{
+	overflow: hidden;
+	position: relative;
+}
+
+.folio-item img.folio-img{
+	max-width: 100%;
+	width: 100%;
+	transition: all 0.5s ease;
+	opacity: 0.8;
+}
+
+.folio-overlay{
+	background: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	transition: all 0.5s ease;
+}
+
+.project-title{
+	text-align: center;
+	position: relative;
+	left:-100%;
+	transition: all 0.5s ease;
+}
+
+.folio-item a{
+	text-decoration:none;
+}
+
+.folio-item .folio-img-wrap a h2{
+	color:white;
+	/*text-transform: uppercase;*/
+	font-size: 70px;
+	font-family: "Diamor";
+	font-weight: 500;
+}
+
+.folio-item .folio-img-wrap a h3{
+	color:white;
+}
+
+.folio-item:hover .folio-img-wrap a.folio-overlay{
+	background: rgba(0, 0, 0, 0.45);
+	transition: all 0.5s ease;
+}
+
+.folio-item:hover .folio-img-wrap a.folio-overlay .project-title{
+	left:0;
+	transition: all 0.5s ease;
+}
+
+.folio-item:hover img{
+	transform: scale(1.05);
+	transition: all 0.5s ease;
+}
+
+.folio-item a.project-skills{
+	position: absolute;
+	top:100%;
+	left:0;
+	padding-top: 10px;
+	padding-left: 20px
+}
+
+.folio-item a.project-skills:hover{
+	color:black;
+}
+
+/* modal */

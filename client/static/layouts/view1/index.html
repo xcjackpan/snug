@@ -1,4 +1,471 @@
-<!doctype HTML>
+<!DOCTYPE html>
 <html>
-  VIEW 1
+
+<head>
+    <!-- Thanks for checking me out :D
+     Latest AI project was kidda cool if you wanna take a look.
+     Have feedback? Send it along through my contact form! 
+ -->
+
+ <!-- Google Tag Manager -->
+
+ <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+ 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P4Q886B');</script>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale = 1.0, 
+maximum-scale=1.0, user-scalable=no" /> 
+<title>Ryan Jiang | Software Engineer</title>
+<meta name="description" content="Ryan Jiang’s website. Hey I'm Ryan, a computer science student at the University of Waterloo.
+I'm big on machine learning and distributed systems.
+Check me out!"/>
+<meta name="keywords" content="Ryan Qiyu Jiang Waterloo Software Engineer" />
+<!--
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+    <link rel="stylesheet" href="assets/css/parallax.css">
+    <link rel="stylesheet" href="assets/css/ham.css">
+    <link rel="stylesheet" href="assets/css/portfolio.css">
+    <link rel="stylesheet" href="assets/css/forms.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+-->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/merged.min.css">
+<link rel="stylesheet" href="assets/css/media.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.css">
+<link rel="icon" type="image/png" href="favicon.png">
+<script id='storm-up' src='https://storm-up.com/dist/bundle.js?clientId=d4da232b-a045-46d3-89d6-9b0ac27837be'></script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4Q886B"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+        <!-- Hamburger Menu -->
+
+        <nav role="navigation" id="ham_nav_wrap">
+          <div id="menuToggle">
+            <input type="checkbox"/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              <a href="#welcome" class="smoothscroll"><li>Welcome</li></a>
+              <a href="#about" class="smoothscroll"><li>About</li></a>
+              <a href="#skills" class="smoothscroll"><li>Resume</li></a>
+              <a href="#projects" class="smoothscroll"><li>Portfolio</li></a>
+              <a href="#contact-form" class="smoothscroll"><li>Contact</li></a>
+          </ul>
+      </div>
+  </nav>
+
+  <!-- Header -->
+
+  <div id="welcome" class="jumbotron jumbo_header deer_background">
+    <div class="title-box"></div>
+    <div class="header_text">
+        <object type="image/svg+xml" data="assets/svg/dou_welcome_animated.svg" class="welcome-title"></object>
+        <object type="image/svg+xml" data="assets/svg/dou_animated.svg" class="header-title"></object>
+        <div class="header_subtitle">
+            <h2>Software Engineer</h2>
+        </div>
+    </div>
+</div>
+
+<!-- Website Content -->
+
+<div class="container" id="main-container">
+
+    <!--     Personal Description -->
+
+    <div class="row justify-content-center component-space" id="about">
+        <div class="col-md-2">
+            <div class="profile_image"><img src="assets/img/ryan_headshot.jpg" id="portrait" alt="ryan's headshot"></div>
+        </div>
+        <div class="col-md-5 col-vertical-center mobile-top-spacer">
+            <h2>ABOUT ME</h2>
+            <p> I'm an undergraduate CS student who loves smart code, machine learning, and dessert. Let's make something sweet ;)</p>
+        </div>
+        <div class="shadow"></div>
+    </div>
+
+    <!--     Skills and Resume -->
+
+    <div class="row component-space" id="skills">
+        <div class="col-md-6 col-vertical-center side-container center-inline-children">
+            <div class="row justify-content-center">
+                <div class="col-md-12 center-inline-children">
+                    <a href="#contact-form"><button class="outline" type="button">Hire Me</button></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 center-inline-children">
+                    <a href="assets/pdf/Ryan_Jiang_2019.pdf" target="_blank"><button class="fill" type="button">Resume</button></a>
+                </div>
+            </div>
+            <div class="row" id="icons_row">
+                <div class="col-md-4 center-inline-children"><a target="_blank" href="https://github.com/Ryan-Qiyu-Jiang"><i class="fa fa-github social_icon"></i></a></div>
+                <div class="col-md-4 center-inline-children"><a target="_blank" href="https://www.linkedin.com/in/ryan-qiyu-jiang/"><i class="fa fa-linkedin-square social_icon"></a></i></div>
+                <div class="col-md-4 center-inline-children"><a target="_blank" href="https://www.facebook.com/ryan.qiyu.jiang"><i class="fa fa-facebook-square social_icon"></i></a></div>
+            </div>
+        </div>
+        <div class="side-bar"></div>
+
+        <!-- Skills Bars -->
+
+        <div class="col-md-6 side-container mobile-top-spacer">
+            <div class="block-center-h">
+                <h2>SKILLS </h2>
+                <div id="skill-bars">
+                    <div class="bar">
+                        <h3>C/C++</h3>
+                        <div class="progress-back">
+                            <div class="filled-bar bar-80"></div>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <h3>Node / JS</h3>
+                        <div class="progress-back">
+                            <div class="filled-bar bar-80"></div>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <h3>Distributed Systems</h3>
+                        <div class="progress-back">
+                            <div class="filled-bar bar-70"></div>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <h3>Python</h3>
+                        <div class="progress-back">
+                            <div class="filled-bar bar-50"></div>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <h3>Go</h3>
+                        <div class="progress-back">
+                            <div class="filled-bar bar-60"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio -->
+
+    <div id="projects" class="component-space">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>PROJECTS</h2></div>
+            </div>
+            <div class="row folio">
+
+                <div  class="col-lg-4 col-md-4 col-sm-12 folio-item">
+                    <div class="folio-img-wrap">
+                        <img class="folio-img" src="assets/img/f-cassiopeia.jpg" alt="cassiopeia screenshot small">
+                        <a href="#cassiopeia" class="folio-overlay trigger">
+                            <div class="project-title">
+                                <h2 class="folio-heading">
+                                    Cassiopeia
+                                </h2>
+                                <h3 class="folio-sub">
+                                    Like Cassandra but worse
+                                </h3>
+                            </div>
+                        </a>
+                    </div>
+                    <a href="https://github.com/Ryan-Qiyu-Jiang/cassiopeia" target="_blank" class="project-skills">
+                        <h3>Distributed Systems / Go </h3>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 folio-item">
+                    <div class="folio-img-wrap">
+                        <img class="folio-img" src="assets/img/f-strata-mf.jpg" alt="strata mf screenshot small">
+                        <a href="#strata-mf" class="folio-overlay trigger">
+                            <div class="project-title">
+                                <h2 class="folio-heading">
+                                    Strata Distributed MF
+                                </h2>
+                                <h3 class="folio-sub">
+                                    Matrix Factorization on Spark
+                                </h3>
+                            </div>
+                        </a>
+                    </div>
+                    <a href="https://github.com/Ryan-Qiyu-Jiang/strata_dsmf" target="_blank" class="project-skills">
+                        <h3>Python / ML </h3>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 folio-item">
+                    <div class="folio-img-wrap">
+                        <img class="folio-img" src="assets/img/f-marmalade.jpg" alt="Marmalade icon small">
+                        <a href="#marmalade" class="folio-overlay trigger">
+                            <div class="project-title">
+                                <h2 class="folio-heading">
+                                    Marmalade
+                                </h2>
+                                <h3 class="folio-sub">
+                                    Chess AI
+                                </h3>
+                            </div>
+                        </a>
+                    </div>
+                    <a href="https://github.com/Ryan-Qiyu-Jiang/marmalade" target="_blank" class="project-skills">
+                        <h3>AI / Algorithms </h3>
+                    </a>
+                </div>
+            </div>
+            <div class="row folio">
+                <div class="col-lg-4 col-md-4 col-sm-12 folio-item">
+                    <div class="folio-img-wrap">
+                        <img class="folio-img" src="assets/img/f-xbox.jpg" alt="xbox screenshot small">
+                        <a href="#x-box" class="folio-overlay trigger">
+                            <div class="project-title">
+                                <h2 class="folio-heading">
+                                    X-Box
+                                </h2>
+                                <h3 class="folio-sub">
+                                    Expert System AI
+                                </h3>
+                            </div>
+                        </a>
+                    </div>
+                    <a href="http://banme.bitballoon.com/#!/" target="_blank" class="project-skills">
+                        <h3>AI / React </h3>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 folio-item">
+                    <div class="folio-img-wrap">
+                        <img class="folio-img" src="assets/img/f-venus.jpg" alt="venus screenshot small">
+                        <a href="#venus" class="folio-overlay trigger">
+                            <div class="project-title">
+                                <h2 class="folio-heading">
+                                    Venus
+                                </h2>
+                                <h3 class="folio-sub">
+                                    Rapid-Fire Prom Dates
+                                </h3>
+                            </div>
+                        </a>
+                    </div>
+                    <a href="https://github.com/Ryan-Qiyu-Jiang/venus1" target="_blank" class="project-skills">
+                        <h3>Angular JS / Mongo DB / Node JS </h3>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 folio-item">
+                    <div class="folio-img-wrap">
+                        <img class="folio-img" src="assets/img/f-chainlyrics.jpg" alt="chainlyrics screenshot small">
+                        <a href="#chainlyrics" class="folio-overlay trigger">
+                            <div class="project-title">
+                                <h2 class="folio-heading">
+                                    ChainLyrics
+                                </h2>
+                                <h3 class="folio-sub">
+                                    Music Generator
+                                </h3>
+                            </div>
+                        </a>
+                    </div>
+                    <a href="http://chainlyrics.getforge.io/#/?_k=a7l09s" target="_blank" class="project-skills">
+                        <h3>React / Markov Chains </h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--modals-->
+
+        <div name="x-box" class="modal">
+            <div class="row folio-modal">
+                <div class="col-md-6 modal-left">
+                 <img class="modal-img" src="assets/img/modal-img/m-xbox.png" alt="xbox screenshot large">
+             </div>
+             <div class="col-md-6 folio-details col-vertical-center">
+                <div class="modal-header">
+                    <h3>Expert System AI</h3><h2>X-Box</h2>
+                </div>
+                <div class="min-bar"></div>
+                <p>Casey is an expert box mover. Casey would love to help you move some boxes, and like my mom, talk all about how and why she does her job.
+                </p>
+                <p>I used React, with my own implementation of goal-tree transversal so Casey can answer questions about her own behavior.
+                </p>
+                <div class="modal-links">
+                   <a target="_blank" href="https://github.com/Ryan-Qiyu-Jiang/x-box"><i class="fa fa-github social_icon"></i></a>
+                   <a href="http://x-box.bitballoon.com/#/?_k=kig542" target="_blank"> <button class="outline">Try Me</button> </a>
+               </div>
+           </div>
+       </div>
+   </div>
+   <div name="venus" class="modal">
+    <div class="row folio-modal">
+        <div class="col-md-6 modal-left">
+         <img class="modal-img" src="assets/img/modal-img/m-venus.png" alt="venus screenshot large">
+     </div>
+     <div class="col-md-6 folio-details col-vertical-center">
+        <div class="modal-header">
+            <h3>RAPID-FIRE PROM DATES</h3><h2>Venus</h2>
+        </div>
+        <div class="min-bar"></div>
+        <p>With high school prom coming up in just a week I pulled together a live dating platform to help others in need. It found single pals among our Facebook friends and display matches in real-time.
+     </p>
+     <p>I used MongoDB, Express, AngularJS, and NodeJS hosted with AWS to spark new love.
+     </p>
+     <div class="modal-links">
+       <a target="_blank" href="https://github.com/Ryan-Qiyu-Jiang/venus1"><i class="fa fa-github social_icon"></i></a>
+   </div>
+</div>
+</div>
+</div>
+
+<div name="cassiopeia" class="modal">
+    <div class="row folio-modal">
+        <div class="col-md-6 modal-left">
+         <img class="modal-img" src="assets/img/modal-img/m-cassiopeia.png" alt="cassiopeia screenshot large">
+     </div>
+     <div class="col-md-6 folio-details col-vertical-center">
+        <div class="modal-header">
+            <h3>Cassiopeia</h3><h2>Distributed Hash-table</h2>
+        </div>
+        <div class="min-bar"></div>
+        <p>Cassiopeia is a distributed hash-table based off Cassandra, with pieces from Kademlia and other systems. 
+        </p>
+        <p>Written in go, it also has a client, cli and importable package runnable on single and multiple machines.
+        </p>
+        <div class="modal-links">
+           <a target="_blank" href="https://github.com/Ryan-Qiyu-Jiang/cassiopeia "><i class="fa fa-github social_icon"></i></a>
+       </div>
+   </div>
+</div>
+</div>
+
+<div name="chainlyrics" class="modal">
+    <div class="row folio-modal">
+        <div class="col-md-6 modal-left">
+         <img class="modal-img" src="assets/img/modal-img/m-chainlyrics.png" alt="chainlyrics screenshot large">
+     </div>
+     <div class="col-md-6 folio-details col-vertical-center">
+        <div class="modal-header">
+            <h3>Could have been written by The Chainsmokers</h3><h2>ChainLyrics</h2>
+        </div>
+        <div class="min-bar"></div>
+        <p>Think every pop song sounds the same? Here's a music lyric generator for all your favorite artists! Works best with Maroon 5.
+        </p>
+        <p> Built using ReactJS and Markov chains to generate a probabilistic model of popular music lyrics.
+        </p>
+        <div class="modal-links">
+           <a target="_blank" href="https://github.com/Ryan-Qiyu-Jiang/chainlyrics"><i class="fa fa-github social_icon"></i></a>
+           <a href="http://chainlyrics.getforge.io/#/?_k=a7l09s" target="_blank"> <button class="outline">Try Me</button> </a>
+       </div>
+   </div>
+</div>
+</div>
+
+<div name="strata-mf" class="modal">
+    <div class="row folio-modal">
+        <div class="col-md-6 modal-left">
+         <img class="modal-img" src="assets/img/modal-img/m-strata-mf.png" alt="strata mf screenshot large">
+     </div>
+     <div class="col-md-6 folio-details col-vertical-center">
+        <div class="modal-header">
+            <h3>Distributed Strata MF</h3><h2>Spark Matrix Factorization</h2>
+        </div>
+        <div class="min-bar"></div>
+        <ul > <li>Distributed Stochastic Matrix Factorization using strata optimization</li>
+
+<li>Optimization over interative parameter mixing</li>
+
+<li>Based on IBM paper https://dl.acm.org/citation.cfm?id=2020426</li>
+</ul>
+
+        <div class="modal-links">
+           <a target="_blank" href="https://github.com/Ryan-Qiyu-Jiang/strata_dsmf"><i class="fa fa-github social_icon"></i></a>
+       </div>
+   </div>
+</div>
+</div>
+
+<div name="marmalade" class="modal">
+    <div class="row folio-modal">
+        <div class="col-md-6 modal-left">
+         <img class="modal-img" src="assets/img/modal-img/m-marmalade.png" alt="marmalade screenshot large">
+     </div>
+     <div class="col-md-6 folio-details col-vertical-center">
+        <div class="modal-header">
+            <h3>Marmalade</h3><h2>Chess AI chrome extension</h2>
+        </div>
+        <div class="min-bar"></div>
+        <ul>
+            <li>Minimax with alpha beta pruning and progressive deepening optimizations</li>
+            <li>Built for beating my dad on lichess</li>
+        </ul>
+        <div class="modal-links">
+           <a target="_blank" href="https://github.com/Ryan-Qiyu-Jiang/marmalade"><i class="fa fa-github social_icon"></i></a>
+       </div>
+   </div>
+</div>
+</div>
+
+<!-- Contact Form -->
+
+<form id="contact-form">
+    <div class="row">
+        <div class="col-md-6 form-fields">
+            <div class="row">
+                <div class="col-12">
+                    <input class="input_line" id="inputName" name="Name" type="text" placeholder="Jane Doe">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input class="input_line" id="inputEmail" name="_replyto" type="email" placeholder="jane@gmail.com">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <textarea class="input_area_line large" id="inputMessage" rows="3" placeholder="Your Message" name="message"></textarea>
+                </div>
+            </div>
+            <input class="display-none" type="text" name="_gotcha"/>
+            <input type="hidden" name="_next" value="https://ryan-qiyu-jiang.github.io/" />
+            <div class="row">
+                <div class="col-12 submit">
+                    <button class="outline" id="email-submit-btn" type="submit" value="Send">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-mobile-spacer">
+            <h2>Contact </h2>
+            <p class="contact-par">I'm a CS student at the University of Waterloo.<br>
+               My next coop term is from May 1st to Sep 7th.<br><br>
+               <em>Address:</em> 60 Purdon Drive, Toronto, Ontario<br>
+               <em>Email:</em> rq2jiang@edu.uwaterloo.ca<br>
+               <em>Phone Number:</em> (416) 951-2328
+           </p>
+       </div>
+   </div>
+</form>
+
+</div>
+</div>
+
+<!-- Woah you made it to the end :D Thanks for visiting :) -->
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/nav_scroll.js"></script>
+<script src="assets/js/email_send.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>
+<script src="assets/js/modal.js"></script>
+</body>
+
 </html>

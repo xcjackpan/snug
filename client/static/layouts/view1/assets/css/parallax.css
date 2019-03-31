@@ -1,0 +1,78 @@
+#parallax {
+  -webkit-perspective: 100px;
+          perspective: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width:100%;
+
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width:100%;
+}
+
+
+.parallax__layer img {
+  display: block;
+  position: absolute;
+  left:0;
+  width:100%;
+
+}
+
+.parallax__cover {
+  background: #ffffff;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+/*  height: 1500px;*/
+  z-index: 5;
+}
+
+.one {
+  -webkit-transform: translateZ(0px) scale(1);
+          transform: translateZ(0px) scale(1);
+          mix-blend-mode: multiply;
+}
+.two {
+  -webkit-transform: translateZ(-50px) scale(1.5);
+          transform: translateZ(-50px) scale(1.5);
+          mix-blend-mode: multiply;
+
+}
+.three {
+  -webkit-transform: translateZ(-100px) scale(2);
+          transform: translateZ(-100px) scale(2);
+          mix-blend-mode: multiply;
+}
+.four {
+  -webkit-transform: translateZ(-150px) scale(2.5);
+          transform: translateZ(-150px) scale(2.5);
+}
+.five {
+  -webkit-transform: translateZ(-200px) scale(3);
+          transform: translateZ(-200px) scale(3);
+          mix-blend-mode: multiply;
+}
+.six {
+  -webkit-transform: translateZ(-250px) scale(3.5);
+          transform: translateZ(-250px) scale(3.5);
+          mix-blend-mode: multiply;
+}
+.seven {
+  -webkit-transform: translateZ(-300px) scale(4);
+          transform: translateZ(-300px) scale(4);
+          mix-blend-mode: multiply;
+}
