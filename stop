@@ -1,3 +1,2 @@
 docker stop snug_client
 docker rm snug_client
-docker image rm nginx_static
