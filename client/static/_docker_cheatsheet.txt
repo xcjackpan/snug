@@ -1,0 +1,13 @@
+do once
+docker build -t nginx_static .
+
+start:
+docker run -d -p 8080:80 nginx_static
+
+other:
+docker container list
+docker rm <container>
+docker images
+docker image rm <image id>
+
+localhost:8080 will host static
