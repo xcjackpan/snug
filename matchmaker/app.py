@@ -10,7 +10,7 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-static_endpoint = "localhost:8080"
+static_endpoint = "http://localhost:8080"
 @app.route('/')
 def hello():
     print("asdf")
@@ -26,11 +26,11 @@ def gatway():
     ip = request.remote_addr
     print(data)
     if int(width) < 1000:
-        return "http://localhost:8080/layouts/view1/"
+        return static_endpoint+"/layouts/view1/"
     elif browser == "Chrome":
-        return "http://localhost:8080/layouts/view2/"
+        return static_endpoint+"/layouts/view2/"
     else:
-        return "http://localhost:8080/layouts/view3/"
+        return static_endpoint+"/layouts/view3/"
 
 if __name__ == '__main__':
     app.run(port=3000)
