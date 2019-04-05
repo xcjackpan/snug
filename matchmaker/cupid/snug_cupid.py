@@ -12,6 +12,7 @@ from keras.models import Model
 from random import shuffle
 import matplotlib.pyplot as plt
 
+np.random.seed(7)
 float_formatter = lambda x: "%.2f" % x
 np.set_printoptions(formatter={'float_kind':float_formatter})
 
@@ -105,7 +106,7 @@ user_info = {'timeOpened': '2019-03-31T18:37:50.965Z', 'timezone': 4, 'longitude
 
 pref_map = [('browserName','Chrome',0), ('timezone',3,1)]
 
-data_x, data_y = gen_data(user_info, pref_map, 3, 100,0)
+data_x, data_y = gen_data(user_info, pref_map, 3, 500,0)
 val_x, val_y = gen_data(user_info, pref_map, 3, 10,0)
 # for i in range(val_y.shape[0]):
 #     print(val_x[i],val_y[i])
@@ -117,7 +118,7 @@ val_x, val_y = gen_data(user_info, pref_map, 3, 10,0)
 def gen_duration_model(input_size):
     inputs = Input(shape=(input_size,))
     
-    d = Dense(64, kernel_initializer='normal', activation='tanh')(inputs)
+    d = Dense(32, kernel_initializer='normal', activation='tanh')(inputs)
 #     d = Dense(64, kernel_initializer='normal', activation='tanh')(d)
 #     d = Dense(16, kernel_initializer='normal', activation='tanh')(d)
     d = Dense(1)(d)

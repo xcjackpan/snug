@@ -91,7 +91,7 @@ def gen_data(user_info,pref_map, num_layouts, size=1000, var=10):
 def gen_duration_model(input_size):
     inputs = Input(shape=(input_size,))
     
-    d = Dense(64, kernel_initializer='normal', activation='tanh')(inputs)
+    d = Dense(32, kernel_initializer='normal', activation='tanh')(inputs)
 #     d = Dense(64, kernel_initializer='normal', activation='tanh')(d)
 #     d = Dense(16, kernel_initializer='normal', activation='tanh')(d)
     d = Dense(1)(d)
@@ -109,7 +109,7 @@ def build_model(user_info, pref_map, num_class):
     model = gen_duration_model(data_x.shape[1])
     model.compile(optimizer='sgd',
                 loss='mean_squared_error')
-    history = model.fit(data_x, data_y, validation_split=0.33, epochs=7)
+    history = model.fit(data_x, data_y, validation_split=0.33, epochs=5)
     loss = model.evaluate(val_x, val_y)
 
     # plt.plot(history.history['loss'])

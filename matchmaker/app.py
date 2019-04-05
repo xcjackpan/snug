@@ -44,9 +44,15 @@ def gatway():
     data['is_us'] = (country_data['country_code'] == 'US')
     
     print(data)
+
+    user_info = {}
+    for k,v in data.items():
+        if v:
+            user_info[k]=v
     
-    user_info = {'timeOpened': '2019-03-31T18:37:50.965Z', 'timezone': 4, 'longitude': -80.5327216, 'latitude': 43.4653171, 'heading': None, 'speed': None, 'altitude': None, 'altitudeAccuracy': None, 'timestamp': '2019-03-31T18:37:50.968Z', 'browserName': 'Mozilla', 'referrer': '', 'sizeScreenW': 1920, 'sizeScreenH': 1080, 'browserWidth': 968, 'browserHeight': 918}
-    pref_map = [('browserName','Chrome',0), ('timezone',3,1)]
+    print(user_info)
+    #user_info = {'timeOpened': '2019-03-31T18:37:50.965Z', 'timezone': 4, 'longitude': -80.5327216, 'latitude': 43.4653171, 'heading': None, 'speed': None, 'altitude': None, 'altitudeAccuracy': None, 'timestamp': '2019-03-31T18:37:50.968Z', 'browserName': 'Mozilla', 'referrer': '', 'sizeScreenW': 1920, 'sizeScreenH': 1080, 'browserWidth': 968, 'browserHeight': 918}
+    pref_map = [('browserName','Mozilla',0), ('timezone',3,1)]
 
     model, loss = build_model(user_info, pref_map, 3)
     print("loss is ", loss)
