@@ -17,26 +17,62 @@ def gen_data_raw(user_info,pref_map, num_layouts, size=1000, var=10):
     data_x = []
     data_y = []
     for _ in range(size):
-        for field, val, layout in pref_map:
-            x = list(user_info.values())+[np.random.randint(num_layouts)]
-            data_x.append(x)
-            data_y += [average]
-            
-    for _ in range(size):
+        for _ in pref_map:
+            layout_id = np.random.randint(num_layouts)
+            u = user_info.copy()
+            for f,v,l in pref_map:
+                if f == 'browserName':
+                    r = np.random.rand()
+                    u[f] = 'Mozilla' if r < 0.5 else 'Chrome'
+                elif f == 'timezone':
+                    r = np.random.randint(24)
+                elif f == 'longitude' or f == 'latitude':
+                    r = np.random.rand()*200 - 100
+                    u[f] = r
+                elif isinstance(v,int):
+                    u[f] = np.random.randint(1000)
+            should_stop = False
+            for f,v,l in pref_map:
+                if u[f] == v and layout_id == l :
+                    should_stop = True
+            if not should_stop:
+                x = list(user_info.values())+[layout_id]
+                data_x.append(x)
+                data_y += [average]
+    print("wrongs: ",data_x[0])
+    print("wrongs: ",data_x[1])
+    print("wrongs: ",data_x[2])
+    for i in range(size):
         for field, val, layout in pref_map:
             u = user_info.copy()
             u[field] = val 
             if not isinstance(val, str):
                 u[field] += np.random.rand()*var - var/2
-            x = list(u.values())+[layout]
-            data_x.append(x)
+            x = list(u.values())
+            data_x.append(x+[layout])
             data_y += [high]
-    
+            if i < 2:
+                print("good: ", x)
+            for l in range(num_layouts):
+                if l != layout:
+                    data_x.append(x+[l])
+                    data_y += [average] 
+
     zipped = list(zip(data_x,data_y))
     shuffle(zipped)
     data_x, data_y = zip(*zipped)
     
     return (data_x, data_y)
+
+def gen_data_raw_one(user_info, num_layouts):
+    data_x = []
+    
+    for layout in range(num_layouts):
+        u = user_info
+        x = list(u.values())+[layout]
+        data_x.append(x)
+    print("post: ",data_x)
+    return data_x
 
 def is_int(s):
     try: 
@@ -88,6 +124,13 @@ def gen_data(user_info,pref_map, num_layouts, size=1000, var=10):
     
     return (data_x, data_y)
 
+def preprocess(user_info, num_layouts):
+    data_x = gen_data_raw_one(user_info, num_layouts)
+    data_x = data_clean(data_x)
+    data_x = np.array(data_x)
+    data_x = data_normalize(data_x)
+    return data_x
+
 def gen_duration_model(input_size):
     inputs = Input(shape=(input_size,))
     
@@ -112,6 +155,8 @@ def build_model(user_info, pref_map, num_class):
     history = model.fit(data_x, data_y, validation_split=0.33, epochs=5)
     loss = model.evaluate(val_x, val_y)
 
+    for i in range(2,7):
+        print("ruan predict:",model.predict(np.array([val_x[i]])), val_y[i])
     # plt.plot(history.history['loss'])
     # plt.plot(history.history['val_loss'])
     # plt.title('model loss')
@@ -156,6 +201,7 @@ def load_model(name="temp"):
 def eval_model(model, user_info={}, pref_map={}, num_class=3, data=None):
     val_x, val_y = gen_data(user_info, pref_map, num_class, 10,0)
     # append data to val data, maybe discount auto-gen data
+    print(val_x[0])
     loss = model.evaluate(val_x, val_y)
     return loss
 
