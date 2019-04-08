@@ -175,8 +175,11 @@ def build_model(user_info, pref_map, num_class):
 def save_model(model, name="temp"):
     model_json = model.to_json()
     mdir = "model_h5"
-    os.remove('{}/{}.json'.format(mdir,name))
-    os.remove('{}/{}.h5'.format(mdir,name))
+    try:
+        os.remove('{}/{}.json'.format(mdir,name))
+        os.remove('{}/{}.h5'.format(mdir,name))
+    except:
+        print()
     with open("{}/{}.json".format(mdir,name), "w") as json_file:
         json_file.write(model_json)
     # weights to HDF5
@@ -187,16 +190,21 @@ def save_model(model, name="temp"):
 def load_model(name="temp"):
     K.clear_session()
     mdir = "model_h5"
-    json_file = open('{}/{}.json'.format(mdir,name), 'r')
-    loaded_model_json = json_file.read()
-    json_file.close()
-    loaded_model = model_from_json(loaded_model_json)
-    # load weights
-    loaded_model.load_weights('{}/{}.h5'.format(mdir,name))
-    loaded_model.compile(optimizer='sgd',
-                loss='mean_squared_error')
-    print("loaded")
-    return loaded_model
+    try:
+        json_file = open('{}/{}.json'.format(mdir,name), 'r')
+        loaded_model_json = json_file.read()
+        json_file.close()
+        loaded_model = model_from_json(loaded_model_json)
+        # load weights
+        loaded_model.load_weights('{}/{}.h5'.format(mdir,name))
+        loaded_model.compile(optimizer='sgd',
+                    loss='mean_squared_error')
+        print("loaded")
+        return loaded_model, True
+    except FileNotFoundError:
+        return None, False
+    except :
+        return None , False
 
 def eval_model(model, user_info={}, pref_map={}, num_class=3, data=None):
     val_x, val_y = gen_data(user_info, pref_map, num_class, 10,0)

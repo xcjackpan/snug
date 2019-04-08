@@ -13,6 +13,7 @@ CORS(app)
 
 static_endpoint = "http://localhost:8080"
 layout_endpoints = [static_endpoint+"/layouts/view1/", static_endpoint+"/layouts/view2/", static_endpoint+"/layouts/view3/"]
+model = None
 
 @app.route('/')
 def hello():
@@ -21,15 +22,18 @@ def hello():
 
 @app.route('/test/<user_id>')
 def test(user_id):
-    user_info = {'timeOpened': '2019-04-06T05:12:54.103Z', 'timezone': 4, 'longitude': -80.554, 'latitude': 43.474, 'timestamp': '2019-04-06T05:12:54.105Z', 'browserName': 'Chrome', 'referrer': 'http://localhost:8080/', 'sizeScreenW': 1920, 'sizeScreenH': 1080, 'browserWidth': 843, 'browserHeight': 430, 'is_canada': True, 'is_us': False}
-    pref_map = [('browserName','Mozilla',0), ('timezone',3,1)]
-    model = load_model(user_id)
-    loss = eval_model(model, user_info, pref_map, 3)
-    return "loss: "+str(loss)
+    global model
     clear_session()
+    user_info = {'timeOpened': '2019-04-06T05:12:54.103Z', 'timezone': 1, 'longitude': -80.554, 'latitude': 43.474, 'timestamp': '2019-04-06T05:12:54.105Z', 'browserName': 'Mozilla', 'referrer': 'http://localhost:8080/', 'sizeScreenW': 1920, 'sizeScreenH': 1080, 'browserWidth': 843, 'browserHeight': 430, 'is_canada': True, 'is_us': False}
+    pref_map = [('browserName','Chrome',0), ('timezone',4,0)]
+    num_layouts = 3
+    model, ok = load_model(user_id)
+    loss = eval_model(model, user_info, pref_map, num_layouts)
+    return "loss: "+str(loss)
 
 @app.route('/data')
 def gatway():
+    global model
     data = request.args.get('data')
     data = json.loads(data)
 
@@ -53,12 +57,6 @@ def gatway():
             user_info[k]=v
     
     print(user_info)
-    user_info_sample = {'timeOpened': '2019-04-06T05:12:54.103Z', 'timezone': 1, 'longitude': -80.554, 'latitude': 43.474, 'timestamp': '2019-04-06T05:12:54.105Z', 'browserName': 'Mozilla', 'referrer': 'http://localhost:8080/', 'sizeScreenW': 1920, 'sizeScreenH': 1080, 'browserWidth': 843, 'browserHeight': 430, 'is_canada': True, 'is_us': False}
-    pref_map = [('browserName','Chrome',0), ('timezone',4,0)]
-    num_layouts = 3
-    model, loss = build_model(user_info_sample, pref_map, num_layouts)
-    print("loss is ", loss)
-    save_model(model)
     processed_data = preprocess(user_info, num_layouts)
     max_layout = 0
     max_val = 0
@@ -68,18 +66,22 @@ def gatway():
         if s_dur > max_val:
             max_val = s_dur
             max_layout = l
-
-    clear_session()
-
     return layout_endpoints[max_layout]
 
-
-    # if int(width) < 1000:
-    #     return static_endpoint+"/layouts/view1/"
-    # elif browser == "Chrome":
-    #     return static_endpoint+"/layouts/view2/"
-    # else:
-    #     return static_endpoint+"/layouts/view3/"
+def init(user_info_sample, pref_map, num_layouts):
+    clear_session()
+    name = 'sess_dur_regress'
+    model, ok = load_model(name)
+    if not ok :
+        model, loss = build_model(user_info_sample, pref_map, num_layouts)
+        print("loss is ", loss)
+        save_model(model, name)
+    return model
 
 if __name__ == '__main__':
+    user_info_sample = {'timeOpened': '2019-04-06T05:12:54.103Z', 'timezone': 1, 'longitude': -80.554, 'latitude': 43.474, 'timestamp': '2019-04-06T05:12:54.105Z', 'browserName': 'Mozilla', 'referrer': 'http://localhost:8080/', 'sizeScreenW': 1920, 'sizeScreenH': 1080, 'browserWidth': 843, 'browserHeight': 430, 'is_canada': True, 'is_us': False}
+    pref_map = [('browserName','Chrome',0), ('timezone',4,0)]
+    num_layouts = 3
+    model = init(user_info_sample, pref_map, num_layouts)
+
     app.run(port=3000)
