@@ -1,4 +1,4 @@
 ./stop
-docker image rm nginx_static
+sudo docker image rm nginx_static
 cd client
-docker build -t nginx_static .
+sudo docker build -t nginx_static .

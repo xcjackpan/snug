@@ -1,2 +1,2 @@
-docker stop snug_client
-docker rm snug_client
+sudo docker stop snug_client
+sudo docker rm snug_client
